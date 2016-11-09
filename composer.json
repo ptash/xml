@@ -1,0 +1,19 @@
+{
+    "name": "cognitive/util/xml",
+    "description": "XML validation and tools",
+    "authors": [
+        {
+            "name": "Interprogma",
+            "email": "info@interprogma.ru"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "XML\\": "src/",
+            "XML\\Tests\\": "tests/"
+        }
+    }
+}
