@@ -1,5 +1,5 @@
 {
-    "name": "cognitive/util/xml",
+    "name": "cognitive/xml",
     "description": "XML validation and tools",
     "authors": [
         {
@@ -12,8 +12,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Xml\\": "src/",
-            "Xml\\Tests\\": "tests/"
+            "Cognitive\\Xml\\": "src/",
+            "Cognitive\\Xml\\Tests\\": "tests/"
         }
     }
 }

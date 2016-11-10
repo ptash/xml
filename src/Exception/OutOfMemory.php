@@ -1,11 +1,11 @@
 <?php
 /**
- * Исключение нехватики памяти при проверки XML.
+ * Out of memory exception.
  *
- * @package Xml\Exception
+ * @package Cognitive\Xml\Exception
  */
 
-namespace Xml\Exception;
+namespace Cognitive\Xml\Exception;
 
 /**
  * Class OutOfMemory

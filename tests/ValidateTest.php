@@ -2,12 +2,12 @@
 /**
  * Unit tests for /Validate
  *
- * @package Xml\Tests
+ * @package Cognitive\Xml\Tests
  */
 
-namespace Xml\Tests;
+namespace Cognitive\Xml\Tests;
 
-use Xml\Validate;
+use Cognitive\Xml\Validate;
 
 /**
  * Class ValidateTest
@@ -16,29 +16,14 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * System test.
-     *
-     * @return void
-     */
-    public function testRequiredLibraries()
-    {
-
-        $this->assertTrue(function_exists('\libxml_use_internal_errors'));
-        $this->assertTrue(function_exists('\libxml_get_errors'));
-        $this->assertTrue(function_exists('\libxml_clear_errors'));
-        $this->assertTrue(class_exists('\DOMDocument'));
-    }
-
-
-    /**
-     * Test \Xml\Validate
+     * Test \Cognitive\Xml\Validate
      *
      * @return void
      */
     public function testValidateXsd()
     {
         $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/NotExists.xsd";
-        $this->setExpectedException('Xml\Exception\Error');
+        $this->setExpectedException('Cognitive\Xml\Exception\Error');
         new Validate($xsd);
 
         $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.xsd";
@@ -46,7 +31,7 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test \Xml\Validate::validateXML
+     * Test \Cognitive\Xml\Validate::validateXML
      *
      * @return void
      */
@@ -61,11 +46,11 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 
         $validate = new Validate($xsd);
         $this->assertFalse($validate->validateXML(file_get_contents($error)));
-        $this->assertCount(4, $validate->getErrors());
+        $this->assertCount(3, $validate->getErrors());
     }
 
     /**
-     * Test \Xml\Validate::validate
+     * Test \Cognitive\Xml\Validate::validate
      *
      * @return void
      */
@@ -80,6 +65,29 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 
         $validate = new Validate($xsd);
         $this->assertFalse($validate->validate($error));
-        $this->assertCount(4, $validate->getErrors());
+        $this->assertCount(3, $validate->getErrors());
+    }
+
+    /**
+     * Test \Cognitive\Xml\Validate::getErrorsAsString
+     *
+     * @return void
+     */
+    public function testGetErrorsAsString()
+    {
+        $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.xsd";
+        $error = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.error.xml";
+        $validate = new Validate($xsd);
+        $this->assertFalse($validate->validate($error));
+        $this->assertCount(3, $validate->getErrors());
+
+        $s = <<<'EOL'
+Schema validation errors:
+Error 522: Validation failed: no DTD found ! on line 2
+Error 1824: Element 'createDateTime': '2008-29:45' is not a valid value of the atomic type 'xs:dateTime'. on line 4
+Error 1871: Element 'position': This element is not expected. Expected is ( item ). on line 11
+EOL;
+
+        $this->assertEquals($s, $validate->getErrorsAsString('Schema validation errors', "\n"));
     }
 }

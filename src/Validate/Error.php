@@ -1,11 +1,11 @@
 <?php
 /**
- * Ошибка проверки схемы.
+ * Error found in validation process.
  *
- * @package Xml\Validate
+ * @package Cognitive\Xml\Validate
  */
 
-namespace Xml\Validate;
+namespace Cognitive\Xml\Validate;
 
 /**
  * Class Error
@@ -14,28 +14,28 @@ class Error
 {
 
     /**
-     * Уровень ошибки.
+     * Error level.
      *
      * @var integer
      */
     private $level;
 
     /**
-     * Код ошибки.
+     * Error code.
      *
      * @var integer
      */
     private $code;
 
     /**
-     * Сообщение об ошибке.
+     * Error message.
      *
      * @var string
      */
     private $message;
 
     /**
-     * Место возникновения ошибки.
+     * Error line.
      *
      * @var string
      */
@@ -44,10 +44,10 @@ class Error
     /**
      * Error constructor.
      *
-     * @param int    $level   Уровень ошибки.
-     * @param int    $code    Код ошибки.
-     * @param string $message Сообщение об ошибке.
-     * @param string $line    Место возникновения ошибки.
+     * @param int    $level   Error level.
+     * @param int    $code    Error code.
+     * @param string $message Error message.
+     * @param string $line    Error line.
      */
     public function __construct($level, $code, $message, $line)
     {
@@ -58,7 +58,7 @@ class Error
     }
 
     /**
-     * Ошибка строкой.
+     * Convert error to string.
      *
      * @return string
      */
@@ -68,6 +68,7 @@ class Error
             LIBXML_ERR_WARNING => "Warning",
             LIBXML_ERR_ERROR => "Error",
             LIBXML_ERR_FATAL => "Fatal Error",
+            LIBXML_ERR_NONE => 'None'
         );
         $getErr = function ($errorId) use ($map) {
             return isset($map[$errorId]) ? $map[$errorId] : "Undefined Error";
@@ -76,9 +77,9 @@ class Error
     }
 
     /**
-     * Уровень ошибки.
+     * Error level.
      *
-     * @return int Уровень ошибки.
+     * @return int Error level.
      */
     public function getLevel()
     {
@@ -86,9 +87,9 @@ class Error
     }
 
     /**
-     * Код ошибки.
+     * Error code.
      *
-     * @return int Код ошибки.
+     * @return int Error code.
      */
     public function getCode()
     {
@@ -96,9 +97,9 @@ class Error
     }
 
     /**
-     * Сообщение об ошибке.
+     * Error message.
      *
-     * @return string Сообщение об ошибке.
+     * @return string Error message.
      */
     public function getMessage()
     {
@@ -106,9 +107,9 @@ class Error
     }
 
     /**
-     * Место возникновения ошибки.
+     * Error line.
      *
-     * @return string Место возникновения ошибки.
+     * @return string Error line.
      */
     public function getLine()
     {

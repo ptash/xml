@@ -1,11 +1,11 @@
 <?php
 /**
- * Исключение ошибок валидатора.
+ * Common exception of Validate.
  *
- * @package Xml\Exception
+ * @package Cognitive\Xml\Exception
  */
 
-namespace Xml\Exception;
+namespace Cognitive\Xml\Exception;
 
 /**
  * Class Error

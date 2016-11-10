@@ -2,12 +2,12 @@
 /**
  * Unit tests for /Validate/Error
  *
- * @package Xml\Tests\Validate
+ * @package Cognitive\Xml\Tests\Validate
  */
 
-namespace Xml\Tests\Validate;
+namespace Cognitive\Xml\Tests\Validate;
 
-use Xml\Validate;
+use Cognitive\Xml\Validate;
 
 /**
  * Class ErrorTest

@@ -2,10 +2,10 @@
 /**
  * Basic unit tests for Xml library.
  *
- * @package Xml\Tests
+ * @package Cognitive\Xml\Tests
  */
 
-namespace Xml\Tests;
+namespace Cognitive\Xml\Tests;
 
 /**
  * Class CommonTest
