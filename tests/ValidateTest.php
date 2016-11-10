@@ -16,18 +16,55 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * Test \Cognitive\Xml\Validate
+     * Test \Cognitive\Xml\Validate::__construct
      *
      * @return void
      */
-    public function testValidateXsd()
+    public function testValidateException()
     {
         $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/NotExists.xsd";
-        $this->setExpectedException('Cognitive\Xml\Exception\Error');
+        $this->setExpectedException('Cognitive\Xml\Exception\Error', "Scheme 'NotExists.xsd' not available to reading");
         new Validate($xsd);
+    }
 
+    /**
+     * Test \Cognitive\Xml\Validate::__construct
+     *
+     * @return void
+     */
+    public function testValidateConstruct()
+    {
         $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.xsd";
-        new Validate($xsd);
+        $validator = new Validate($xsd);
+        $this->assertInstanceOf('\Cognitive\Xml\Validate', $validator);
+    }
+
+    /**
+     * Test \Cognitive\Xml\Validate::validateXML
+     *
+     * @return void
+     */
+    public function testValidateXMLExceptionInt()
+    {
+        $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.xsd";
+
+        $validate = new Validate($xsd);
+        $this->setExpectedException('Cognitive\Xml\Exception\Error', "Argument not string or empty value");
+        $this->assertTrue($validate->validateXML(10));
+    }
+
+    /**
+     * Test \Cognitive\Xml\Validate::validateXML
+     *
+     * @return void
+     */
+    public function testValidateXMLExceptionEmpty()
+    {
+        $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.xsd";
+
+        $validate = new Validate($xsd);
+        $this->setExpectedException('Cognitive\Xml\Exception\Error', "Argument not string or empty value");
+        $this->assertTrue($validate->validateXML(""));
     }
 
     /**

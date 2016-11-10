@@ -44,6 +44,8 @@ class Validate
      * @param string $xsd Path to XSD scheme.
      *
      * @throws ExceptionError Error reading scheme file.
+     *
+     * @return \Cognitive\Xml\Validate Class instance.
      */
     public function __construct($xsd)
     {
@@ -56,6 +58,7 @@ class Validate
         libxml_clear_errors();
         $this->xml = new \DOMDocument();
         $this->xml->validateOnParse = true;
+        return $this;
     }
 
     /**
@@ -70,7 +73,7 @@ class Validate
     public function validateXML($content)
     {
         if (!is_string($content) || empty($content)) {
-            throw new ExceptionError("Argument not string or empty value.");
+            throw new ExceptionError("Argument not string or empty value");
         }
         $this->xml->loadXML($content);
         return $this->schemaValidate();
