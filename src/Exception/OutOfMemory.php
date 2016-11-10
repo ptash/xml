@@ -2,10 +2,10 @@
 /**
  * Исключение нехватики памяти при проверки XML.
  *
- * @package XML\Exception
+ * @package Xml\Exception
  */
 
-namespace XML\Exception;
+namespace Xml\Exception;
 
 /**
  * Class OutOfMemory

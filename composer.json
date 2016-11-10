@@ -12,8 +12,8 @@
     },
     "autoload": {
         "psr-4": {
-            "XML\\": "src/",
-            "XML\\Tests\\": "tests/"
+            "Xml\\": "src/",
+            "Xml\\Tests\\": "tests/"
         }
     }
 }

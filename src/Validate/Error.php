@@ -5,7 +5,7 @@
  * @package Xml\Validate
  */
 
-namespace XML\Validate;
+namespace Xml\Validate;
 
 /**
  * Class Error

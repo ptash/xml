@@ -2,12 +2,12 @@
 /**
  * Unit tests for /Validate
  *
- * @package XML\Tests
+ * @package Xml\Tests
  */
 
-namespace XML\Tests;
+namespace Xml\Tests;
 
-use XML\Validate;
+use Xml\Validate;
 
 /**
  * Class ValidateTest
@@ -31,14 +31,14 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 
 
     /**
-     * Test \XML\Validate
+     * Test \Xml\Validate
      *
      * @return void
      */
     public function testValidateXsd()
     {
         $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/NotExists.xsd";
-        $this->setExpectedException('XML\Exception\Error');
+        $this->setExpectedException('Xml\Exception\Error');
         new Validate($xsd);
 
         $xsd = __DIR__ . DIRECTORY_SEPARATOR . "Data/scheme.xsd";
@@ -46,7 +46,7 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test \XML\Validate::validateXML
+     * Test \Xml\Validate::validateXML
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test \XML\Validate::validate
+     * Test \Xml\Validate::validate
      *
      * @return void
      */

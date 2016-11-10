@@ -5,11 +5,11 @@
  * @package XML
  */
 
-namespace XML;
+namespace Xml;
 
-use XML\Exception\Error as ExceptionError;
-use XML\Exception\OutOfMemory;
-use XML\Validate\Error;
+use Xml\Exception\Error as ExceptionError;
+use Xml\Exception\OutOfMemory;
+use Xml\Validate\Error;
 
 /**
  * Class Validate

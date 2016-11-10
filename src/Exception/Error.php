@@ -2,10 +2,10 @@
 /**
  * Исключение ошибок валидатора.
  *
- * @package XML\Exception
+ * @package Xml\Exception
  */
 
-namespace XML\Exception;
+namespace Xml\Exception;
 
 /**
  * Class Error

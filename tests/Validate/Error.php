@@ -2,12 +2,12 @@
 /**
  * Unit tests for /Validate/Error
  *
- * @package XML\Tests\Validate
+ * @package Xml\Tests\Validate
  */
 
-namespace XML\Tests\Validate;
+namespace Xml\Tests\Validate;
 
-use XML\Validate;
+use Xml\Validate;
 
 /**
  * Class ErrorTest
