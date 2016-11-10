@@ -4,6 +4,7 @@
     <testsuites>
         <testsuite name="XML Validation Component Test Suite">
             <directory>./tests</directory>
+            <directory>./tests/Validate/Error.php</directory>
         </testsuite>
     </testsuites>
 
