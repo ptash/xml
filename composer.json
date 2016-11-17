@@ -1,6 +1,6 @@
 {
     "name": "cognitive/xml",
-    "description": "XML validation and tools",
+    "description": "XML streaming validation and tools",
     "authors": [
         {
             "name": "Interprogma",

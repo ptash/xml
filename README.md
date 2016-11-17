@@ -1,1 +1,1 @@
-# XML validation and tools
+# XML streaming validation and tools
