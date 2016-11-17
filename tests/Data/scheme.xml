@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order orderid="1">
+    <name>Name</name>
+    <createDateTime>2008-09-29T08:49:45</createDateTime>
+    <shipto>
+        <name>Ship Name</name>
+        <address>Address</address>
+        <city>City</city>
+        <country>Russia</country>
+    </shipto>
+    <item>
+        <title>Title1</title>
+        <!--Optional:-->
+        <note>Note1</note>
+        <quantity>201</quantity>
+        <price>1000.00</price>
+    </item>
+    <item>
+        <title>Title2</title>
+        <!--Optional:-->
+        <note>Note2</note>
+        <quantity>12</quantity>
+        <price>890.00</price>
+    </item>
+</order>

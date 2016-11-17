@@ -2,8 +2,8 @@
 # Do not use the following if the vendor/ directory is commited to
 # your git repository.
 cache:
- paths:
- - vendor/
+  paths:
+  - vendor/
 
 before_script:
 # Install composer dependencies
@@ -11,5 +11,5 @@ before_script:
 - php composer.phar install
 
 test:app:
- script:
- - ./vendor/bin/phpunit --coverage-text
+  script:
+  - ./vendor/bin/phpunit --coverage-text
