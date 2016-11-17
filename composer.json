@@ -1,10 +1,12 @@
 {
     "name": "cognitive/xml",
     "description": "XML streaming validation and tools",
+    "type": "library",
+    "homepage": "http://www.cognitive.ru/",
     "authors": [
         {
-            "name": "Interprogma",
-            "email": "info@interprogma.ru"
+            "name": "Cognitive",
+            "email": "info@cognitive.ru"
         }
     ],
     "require-dev": {
